@@ -1,0 +1,261 @@
+body{
+    background-color: #00BBF0;
+    position: relative;
+}
+h1 {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+p {
+  
+	font-family: 'Roboto', sans-serif;
+    color: black;
+}
+.container{
+    background-color: black;
+    height: 300px;
+    width: 370px;
+    border-radius: 50px;
+    position: absolute;
+    left: 300px;
+    top: 250px;
+}
+.container p {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+    position: relative;
+    right: 30px;
+    left: 10px;
+    top: 10px;
+    color: rgb(0, 141, 0);
+}
+.about, .creator{
+    text-align: center;
+}
+.robots {
+  display: flex;
+  justify-content: center
+}
+.robot_head, 
+.robot_left_arm, 
+.robot_torso, 
+.robot_right_arm, 
+.robot_left_leg, 
+.robot_right_leg{
+	 background-color: white;
+}
+
+.robot_head { 
+    position: relative;
+    left: 5px;
+    width: 200px; 
+	margin: 0 auto; 
+	height: 150px; 
+	border-radius: 200px 200px 0 0; 
+	margin-bottom: 10px;
+} 
+
+
+.robot_head:hover {
+    width: 300px;
+  transition: 1s ease-in-out;
+}
+.robot_eyes {
+	display: flex;
+}
+.mouth{
+    background-color: black;
+    position: relative;
+    top: 90px;
+    left: 10px;
+    height: 1px;
+    width: 100px;
+}
+.robot_left_eye, .robot_right_eye { 
+	width: 20px; 
+	height: 20px; 
+	border-radius: 15px; 
+	background-color: black;
+    display: flex;
+} 
+
+.robot_left_eye { 
+    top: 80px;
+	/* These properties are new and you haven't encountered
+	in this course. Check out CSS Tricks to see what it does! */
+	position: relative; 
+	left: 40px; 
+} 
+
+.robot_right_eye { 
+	position: relative; 
+	top: 80px; 
+	left: 120px; 
+}
+.robot_upper_body { 
+    position: relative;
+	width: 300px; 
+	height: 150px;
+    display: flex;
+} 
+
+.robot_left_arm, .robot_right_arm {     
+	width: 40px; 
+	height: 125px;
+	border-radius: 100px;
+    transition: all 1s;
+} 
+
+.robot_left_arm { 
+    position: relative;
+	margin-right: 10px;
+    top: -100px;
+	margin-left: 10px;
+    transform: rotateZ(00deg);
+    animation: lefthand 1s linear infinite;
+} 
+@keyframes lefthand{
+    0%{
+        transform: translateY(60px) rotateZ(-60deg);
+    }
+    50%{
+        transform:translateY(-0px) rotateZ(-0deg);
+    }
+    100%{
+        transform: translateY(60px) rotateZ(-60deg);
+    }
+}
+
+
+.robot_right_arm { 
+    position: relative;
+    top: -40px;
+	margin-left: 10px;
+    transform: rotateZ(80deg);
+    animation: righthand 1s linear infinite;
+}
+@keyframes righthand{
+    0%{
+        transform: translateY(-10px) rotateZ(60deg);
+    }
+    50%{
+        transform:translateY(-60px) rotateZ(-0deg);
+    }
+    100%{
+        transform: translateY(-10px) rotateZ(60deg);
+    }
+}
+
+.robot_torso { 
+	width: 200px; 
+	height: 200px;
+	border-radius: 0 0 50px 50px; 
+  display: flex;
+  justify-content: center;
+} 
+.heart {
+    position: relative;
+    display: flex;
+    background-color: red;
+    height: 70px;
+    width: 70px;
+    top: 50px;
+    transform: rotate(-45deg);
+    animation: heartbeat 2s linear infinite;
+}
+
+.heart::after{
+    background: inherit;
+    content: '';
+    height: 70px;
+    width: 70px;
+    top: -40px;
+    left: 1px;
+    position: relative;
+    border-radius: 50%;
+}
+.heart::before{
+    background: inherit;
+    content: '';
+    height: 70px;
+    width: 70px;
+    top:  0;
+    right: -60%;
+    position: absolute;
+    border-radius: 50%;
+}
+@keyframes heartbeat{
+    0%{
+        transform: rotate(-45deg) scale(1);
+    }
+    25%{
+        transform: rotate(-45deg) scale(1.1);
+    }
+    55%{
+        transform: rotate(-45deg) scale(1.2);
+    }
+    75%{
+        transform: rotate(-45deg) scale(1.1);
+    }
+    100%{
+        transform: rotate(-45deg) scale(1);
+    }
+}
+
+.robot_torso:hover .heart {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+.robot_lower_body { 
+  display: flex;
+	width: 300px; 
+	height: 200px;
+    border-radius: 0px 0px 100px 100px;
+	/* This is another useful property. Hmm what do you think it does?*/
+	margin: 0 auto;
+
+} 
+
+.robot_left_leg, .robot_right_leg { 
+    position: relative;
+    left: 5px;
+	width: 40px; 
+	height: 120px;
+	border-radius: 0 0 100px 100px; 
+} 
+
+.robot_left_leg { 
+    top: 20px;
+    right: 20px;
+    position: relative;
+	margin-left: 90px; 
+} 
+
+.robot_left_leg:hover {
+	-webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+
+.robot_right_leg { 
+    top: 20px;
+    left: 20px;
+	margin-left: 30px; 
+}
+.robot_right_leg:hover {
+	-webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+audio{
+    flex-wrap: wrap;
+    display: flex;
+    position: relative;
+    top: 560px;
+    left: 950px;
+}
